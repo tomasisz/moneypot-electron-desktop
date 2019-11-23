@@ -1,0 +1,130 @@
+
+<html>
+
+<head>
+   <!--load all styles -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Moneypot Login</title>
+  <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self';" /> -->
+
+  
+</head>
+
+<body>
+  <!-- On first load, please get the WalletURL from here: -> https://moneypot.com/releasest If you don't insert a valid URL, the app WON'T load! -->
+  <i class="fas fa-user"></i>
+  <div id="overlayinfo">
+    <!-- <div style="padding-top: 5%;"> -->
+      <div class="card w-75 text-center" id="card3">
+        <div class="card-body text-align">
+          <h5 class="card-title">Welcome to the Moneypot Desktop Wallet!</h5>
+          <p class="card-text">This wallet has a couple of advantages over the normal webversion.</p>
+          <br>
+          <h5>How does it work?</h5>
+          <div class="alert alert-primary" style="max-width: 600;  margin: auto;" role="alert">
+            This app uses a version URL to load the correct and up-to-date wallet version. <br>
+            You can find the version URL here: <strong><a href="http://moneypot.com/releases/#latest-url"
+                target="_blank">Moneypot.com/releases</a></strong> <br>
+          </div>
+          <br>
+          <div class="alert alert-info" style="max-width: 600;  margin: auto;" role="alert">
+            Interested in more information? Please also visit <strong><a href="http://moneypot.com/releases/"
+                target="_blank">Moneypot.com/releases</a></strong>
+          </div>
+          <br>
+          <button id="onclick1" class="btn btn-primary btn-lg"> I got it, Thanks </Button>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+  <div ><h1 class="moneypot">moneypot</h1></div>
+  <div id="cauldron"></div>
+
+  <div class="card" id="card1" style="width: 75%; max-width: 56rem; min-width: 28rem ;">
+      <div style="text-align:center">
+
+          <form>
+            
+            <button id="closebtn" class="btn btn-primary btn-lg"> Launch the App </Button>
+
+            <fieldset>
+              <div class="ex1">
+                </br>
+                <div style="text-align:left" for="usr" siz>
+                  <h6>URL:</h6>
+                </div>
+                <input type="url" name="firstlast" class="form-control form-control-lg" id="moneypoturl" 
+                  placeholder="https://wallet.moneypot.com/main.***.js#****">
+                </br>
+              </div>
+              <Button type="submit" id="submit" class="btn btn-default">Save a new URL</Button>
+              </br>
+              </br>
+              
+              
+        </div>
+        <!-- <div style="text-align:center">
+          Your current URL:
+        </div>
+        <a href>
+          <div class="card w-75 center" id="card2">
+            <div class="card-body">
+              <div id="insert"></div>
+            </div>
+          </div>
+        </a>
+        <div style="text-align:center">
+            Your current Hash:          </div> -->
+            <button type="button" id="displayurl" class="btn btn-success" >Display the current URL</button>
+            <div id="hideurl">
+            <div style="text-align:center" >
+              <h5>Your current URL</h5>
+
+              </div>
+              <a href>
+                <div class="card w-75 center" id="card2" >
+                  <div class="card-body">
+                    <div id="url"></div>
+                  </div>
+                </div>
+              </a>
+              <div style="text-align:center" >
+                 <h5>Your current hash</h5>
+                
+      <div class="card w-75 center" id="card2">
+        <div class="card-body">
+          <div id="hash"></div>
+            </div>
+          </div>
+        </div>
+            <!-- <div class="card w-75 center" id="card2">  -->
+
+            <!-- </div> -->
+        <!-- <div class="card w-75 center" id="card2">
+            <div class="card-body">There is no check to verify whether you entered the URL correctly. After you click
+              "save" the app will attempt to load with the variables you've passed to it in the URL. Please make sure you
+              copied it correctly. </div>
+          </div> -->
+      
+        </fieldset>
+        </form>
+        </div>
+
+ </div>
+
+  <div class="card-body">
+
+    <div id="ThisMainHash"></div>
+    <div id="toaster2">The hash seems valid!</div>
+    <div id="toaster">The hash seems invalid!</div>
+    <div id="toaster3">You might be using an outdated URL! check Moneypot.com/releases !</div>
+    <div id="toaster4">You're using the latest version of Moneypot!</div>
+   </div> 
+</body>
+
+</html>
+
+
+<!-- two way script inclusion -- this sucks -->
+ <!-- <script src="./main_window/index.js"></script>  -->

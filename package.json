@@ -1,0 +1,123 @@
+{
+  "name": "moneypot",
+  "productName": "Moneypot",
+  "version": "0.0.1",
+  "description": "A desktop implementation of the Moneypot Wallet",
+  "main": ".webpack/main",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": {
+    "name": "radve",
+    "email": "44302512+radve@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "static/icons/icon",
+        "name": "Moneypot",
+        "executableName": "moneypot",
+        "win32metadata": {
+          "FileDescription": "testing the description",
+          "ProductName": "Moneypot"
+        }
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "icon": "static/icons/icon.ico",
+            "setupIcon": "static/icons/icon.ico",
+            "authors": "The *** Company.",
+            "exe": "moneypot.exe",
+            "title": "Moneypot",
+            "name": "Moneypot",
+            "iconUrl": "https://raw.githubusercontent.com/moneypot/mp-electron/master/static/icons/icon.ico"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {
+            "options": {
+              "preDepends": "tor",
+              "icon": "static/icons/icon.png",
+              "homepage": "https://moneypot.com",
+              "name": "Moneypot",
+              "version": "0.0.1",
+              "description": "We add a description here"
+            }
+          }
+        }
+      ],
+      "plugins": [
+        [
+          "@electron-forge/plugin-webpack",
+          {
+            "mainConfig": "./webpack.main.config.js",
+            "renderer": {
+              "config": "./webpack.renderer.config.js",
+              "entryPoints": [
+                {
+                  "html": "./src/renderer/login.html",
+                  "js": "./src/renderer/login.tsx",
+                  "name": "main_window",
+                  "preload": {
+                    "js": "./src/preload/login.tsx"
+                  }
+                },
+                {
+                  "html": "./src/renderer/walletloader.html",
+                  "js": "./src/renderer/walletloader.tsx",
+                  "name": "second_window",
+                  "preload": {
+                    "js": "./src/preload/walletloader.tsx"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      ]
+    }
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-store": "^5.1.0",
+    "mousetrap": "^1.6.3",
+    "react-dom": "^16.11.0",
+    "source-map-support": "^0.5.16",
+    "tslint": "^5.20.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "6.0.0-beta.45",
+    "@electron-forge/maker-deb": "6.0.0-beta.45",
+    "@electron-forge/maker-rpm": "6.0.0-beta.45",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.45",
+    "@electron-forge/maker-zip": "6.0.0-beta.45",
+    "@electron-forge/plugin-webpack": "6.0.0-beta.45",
+    "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
+    "@types/source-map-support": "^0.5.0",
+    "copy-webpack-plugin": "^5.0.5",
+    "css-loader": "^3.0.0",
+    "electron": "7.1.1",
+    "file-loader": "^4.2.0",
+    "fork-ts-checker-webpack-plugin": "^3.1.0",
+    "node-loader": "^0.6.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.2",
+    "url-loader": "^2.3.0"
+  }
+}
