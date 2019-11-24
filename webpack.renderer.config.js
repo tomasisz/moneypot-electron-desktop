@@ -12,16 +12,6 @@ rules.push({
 });
 
 
-//  WHEN CREATING EXECUTABLES: UNCOMMENT THE OUTPUT OPTIONS
-//  WHEN CREATING EXECUTABLES: UNCOMMENT THE OUTPUT OPTIONS
-//  WHEN CREATING EXECUTABLES: UNCOMMENT THE OUTPUT OPTIONS
-//  WHEN CREATING EXECUTABLES: UNCOMMENT THE OUTPUT OPTIONS
-//  WHEN IN DEVELOPMENT MODE: COMMENT THE OUTPUT OPTIONS
-//  WHEN IN DEVELOPMENT MODE: COMMENT THE OUTPUT OPTIONS
-//  WHEN IN DEVELOPMENT MODE: COMMENT THE OUTPUT OPTIONS
-//  WHEN IN DEVELOPMENT MODE: COMMENT THE OUTPUT OPTIONS
-
-
 module.exports = {
   // Put your normal webpack config below here
   mode: 'production',
@@ -40,9 +30,5 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css']
     },
-    //  output: {
-    //    publicPath: (__dirname + "/.webpack/renderer/")
-
-    //  }
     
 };

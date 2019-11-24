@@ -51,7 +51,10 @@ document.getElementById("onclick1")!.onclick = () => {
 
 
 const request = async () => {
-     const response = await fetch("http://moneypot.com/latest-version/latest-version.json");
+     const response = await fetch("https://www.moneypot.com/latest-version/latest-version.json"
+    //  , {headers: {"Access-Control-Request-Headers": "origin"
+    // }}
+    );
      // {}     const json = await response.json();
 
      const json = await response.json();

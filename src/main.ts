@@ -132,7 +132,7 @@ const createWindow = () => {
     }, details.responseHeaders)});
   });
 
-
+  
  // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 800,
@@ -146,7 +146,7 @@ const createWindow = () => {
     },
     });
   mainWindow.autoHideMenuBar = true;
-  mainWindow.setResizable = false;
+  mainWindow.resizable = false;
 
 
   // and load the index.html of the app.

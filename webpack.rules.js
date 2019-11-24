@@ -48,7 +48,7 @@ module.exports = [
 
 
             // UNCOMMENT THIS IN PRODUCTION!
-            // publicPath: (__dirname + "/.webpack/renderer")
+             publicPath: (__dirname + "/.webpack/renderer")
 
         } 
      }]
