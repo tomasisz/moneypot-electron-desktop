@@ -9,24 +9,6 @@ window.Mousetrap = Mousetrap;
 window.remote = remote;
 window.BrowserWindow = BrowserWindow;
 // Load main content
-// window.addEventListener("DOMContentLoaded", () => {
-//   const replaceText = (selector: any, text: any) => {
-//     const element = document.getElementById(selector);
-//     if (element) {
-//       element.innerText = text;
-//     }
-//   };
-
-//   for (const type of ["chrome", "node", "electron"]) {
-//      replaceText(`${type}-version`, process.versions[type]);
-//   }
-// });
-
-// i don't think this is necessary
-
-
-
-
 const { Menu, MenuItem, getCurrentWebContents } = remote;
 const webContents = getCurrentWebContents ();
 
@@ -40,11 +22,6 @@ contextMenu.append(
     accelerator: "CmdOrCtrl+C",
   }),
 );
-// contextMenu.append(
-//   new MenuItem({
-//     type: "separator",
-//   }),
-// );
 contextMenu.append(
   new MenuItem({
     label: "Paste",
@@ -93,12 +70,6 @@ const menuItem = new MenuItem
     },
 );
 contextMenu.append (menuItem);
-// contextMenu.append(
-//   new MenuItem({
-//      type: "separator",
-//    }),
-//  );
-
 webContents.on
 (
     "context-menu",

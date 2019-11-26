@@ -1,25 +1,24 @@
-import "../styles/login.css";
+ import "../styles/login.css";
 declare const ipcRenderer: any;
 declare const window: any;
-import x from "../../static/icons/anothericon.png";
+// import x from "../../static/icons/anothericon.png";
 
 
 // This works- types are ridiculously bad though
 window.sourceMapSupport.install();
-// declare const path: any;
-// declare const remote : any;
 
 
 
-// WEBPACK PATHS ARE BUGGED IN PRODUCTION
-const elem = document.createElement("img");
+// // WEBPACK PATHS ARE BUGGED IN PRODUCTION
+// // replace this with FA icons
+// const elem = document.createElement("img");
 
-// elem.src = path.join( x);
-elem.src = x;
-elem.setAttribute("height", "50");
-elem.setAttribute("width", "50");
-// elem.setAttribute("alt", "Flower");
-document.getElementById("cauldron")!.appendChild(elem);
+// // elem.src = path.join( x);
+// elem.src = x;
+// elem.setAttribute("height", "50");
+// elem.setAttribute("width", "50");
+// // elem.setAttribute("alt", "Flower");
+// document.getElementById("cauldron")!.appendChild(elem);
 
 
 
@@ -43,18 +42,8 @@ document.getElementById("onclick1")!.onclick = () => {
     localStorage.setItem("IntroButton", "setTrue");
    };
 
-// function closeintro(): any {
-//     document.getElementById("overlayinfo")!.style.display = "none";
-//      // keep it from displaying over and over again-- is there a better solution than this?
-//     localStorage.setItem("IntroButton", "setTrue");
-//    }
-
-
 const request = async () => {
-     const response = await fetch("https://www.moneypot.com/latest-version/latest-version.json"
-    //  , {headers: {"Access-Control-Request-Headers": "origin"
-    // }}
-    );
+     const response = await fetch("https://www.moneypot.com/latest-version/latest-version.json");
      // {}     const json = await response.json();
 
      const json = await response.json();
@@ -80,7 +69,6 @@ document.getElementById("displayurl")!.onclick = () => {
 
     if (q!.className === "") {
        q!.className = q!.className.replace("", "show");
-       console.log("Xxxxx");
       } else if (q!.className === "show") {
          q!.className = q!.className.replace("show", "");
       }
@@ -140,14 +128,14 @@ function uglytoaster() {
        x!.className = "show";
        setTimeout( () => {
             x!.className = x!.className.replace("show", "hide");
-        }, 2700);
+        }, 2900);
        return;
     } else {
         const y = document.getElementById("toaster");
         y!.className = "show";
         setTimeout( () => {
             y!.className = y!.className.replace("show", "hide");
-        }, 2700);
+        }, 2900);
         return;
     }
   }
@@ -159,7 +147,7 @@ function toasterx() {
     x!.className = "show";
     setTimeout( () => {
         x!.className = x!.className.replace("show", "");
-    }, 5500);
+    }, 5900);
   }
 
 function toastery() {
@@ -167,7 +155,7 @@ function toastery() {
     x!.className = "show";
     setTimeout( () => {
         x!.className = x!.className.replace("show", "");
-    }, 5500);
+    }, 5900);
   }
 
 // function setdialogLinux() {

@@ -2,7 +2,6 @@ import sourceMapSupport from "source-map-support";
 
 import {ipcRenderer, remote} from "electron";
 
-import path from "path";
 
 // const _process = process;
 // process.once("loaded", function() {
@@ -10,7 +9,6 @@ import path from "path";
 //   });
 // window.remote = remote
 
-// window.path = path;
 declare const window: any;
 
 window.sourceMapSupport = sourceMapSupport;
@@ -29,11 +27,6 @@ contextMenu.append(
     accelerator: "CmdOrCtrl+C",
   }),
 );
-// contextMenu.append(
-//   new MenuItem({
-//     type: "separator",
-//   }),
-// );
 contextMenu.append(
   new MenuItem({
     label: "Paste",
@@ -82,11 +75,6 @@ const menuItem = new MenuItem
     },
 );
 contextMenu.append (menuItem);
-// contextMenu.append(
-//   new MenuItem({
-//      type: "separator",
-//    }),
-//  );
 
 webContents.on
 (

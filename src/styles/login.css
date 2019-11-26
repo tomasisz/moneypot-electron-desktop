@@ -1,3 +1,5 @@
+@import "bootstrap.min.css";
+
 div.ex1 {
   width: 400px;
   margin: auto;
@@ -13,14 +15,14 @@ div.ex1 {
   display: block; 
 }
 
-
+/* Just copy & pasted this. Might need later. */
 body { 
   font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   background-color:#3D91F9;
 
 }
  
-#cauldron {
+/* #cauldron {
   text-transform: lowercase;
   letter-spacing: 0.03rem;
   font-weight: 600;
@@ -30,7 +32,9 @@ body {
   margin: 0rem 1rem;
   color: #fff;
 
-}
+} */
+
+/* Just copy & pasted this. Might need later. */
 .moneypot{
   text-transform: lowercase;
   letter-spacing: 0.03rem;
@@ -38,27 +42,14 @@ body {
   top: 10px;
   position: absolute;
   align-self: flex-start;
-  margin: 0rem 5rem;
+  margin: 0rem 1rem;
   color: #fff;
 }
 
- /* body {
-  background-color:#3D91F9;
-}  */
-/* 
-.btn-primary { 
-  background-color: #32ff7e;
-    border-color: #32ff7e;
-} 
-  */
 .btn-primary { 
   margin-top: 50px;
 }
-/* #displayurl.hide {
-  visibility: hidden;
-  display: none; 
 
-} */
 .btn-success { 
   margin: 0 auto; 
   float: none; 
@@ -315,4 +306,8 @@ div.ex2 {
  min-width: 200px;
  /* or whatever width you want. */
  /* display: inline-block; */
+}
+
+#loadOverlay {
+  display: none;
 }

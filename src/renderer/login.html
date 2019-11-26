@@ -3,17 +3,13 @@
 
 <head>
    <!--load all styles -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <title>Moneypot Login</title>
   <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self';" /> -->
-
-  
+  <div id="loadOverlay" style="background-color:#FFF; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
+  <title>Login</title> 
 </head>
 
 <body>
   <!-- On first load, please get the WalletURL from here: -> https://moneypot.com/releasest If you don't insert a valid URL, the app WON'T load! -->
-  <i class="fas fa-user"></i>
   <div id="overlayinfo">
     <!-- <div style="padding-top: 5%;"> -->
       <div class="card w-75 text-center" id="card3">
@@ -43,11 +39,8 @@
 
   <div class="card" id="card1" style="width: 75%; max-width: 56rem; min-width: 28rem ;">
       <div style="text-align:center">
-
-          <form>
-            
+          <form>   
             <button id="closebtn" class="btn btn-primary btn-lg"> Launch the App </Button>
-
             <fieldset>
               <div class="ex1">
                 </br>
@@ -58,24 +51,10 @@
                   placeholder="https://wallet.moneypot.com/main.***.js#****">
                 </br>
               </div>
-              <Button type="submit" id="submit" class="btn btn-default">Save a new URL</Button>
+              <Button type="submit" id="submit" class="btn btn-secondary">Save a new URL</Button>
               </br>
-              </br>
-              
-              
+              </br>            
         </div>
-        <!-- <div style="text-align:center">
-          Your current URL:
-        </div>
-        <a href>
-          <div class="card w-75 center" id="card2">
-            <div class="card-body">
-              <div id="insert"></div>
-            </div>
-          </div>
-        </a>
-        <div style="text-align:center">
-            Your current Hash:          </div> -->
             <button type="button" id="displayurl" class="btn btn-success" >Display the current URL</button>
             <div id="hideurl">
             <div style="text-align:center" >
@@ -112,19 +91,13 @@
         </div>
 
  </div>
-
   <div class="card-body">
-
     <div id="ThisMainHash"></div>
     <div id="toaster2">The hash seems valid!</div>
     <div id="toaster">The hash seems invalid!</div>
     <div id="toaster3">You might be using an outdated URL! check Moneypot.com/releases !</div>
     <div id="toaster4">You're using the latest version of Moneypot!</div>
-   </div> 
+ </div> 
 </body>
 
 </html>
-
-
-<!-- two way script inclusion -- this sucks -->
- <!-- <script src="./main_window/index.js"></script>  -->

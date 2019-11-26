@@ -46,9 +46,7 @@ module.exports = [
             limit: 8000, // Convert images < 8kb to base64 strings
             // outputPath: 'main_window',
 
-
-            // UNCOMMENT THIS IN PRODUCTION!
-             publicPath: (__dirname + "/.webpack/renderer")
+            //  publicPath: (__dirname + "/.webpack/renderer")
 
         } 
      }]

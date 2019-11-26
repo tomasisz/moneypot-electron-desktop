@@ -2,22 +2,9 @@ import "../styles/walletloader.css";
 const setURL = localStorage.getItem("MainscriptURL");
 const setHash = localStorage.getItem("MainHash");
 
-// const filter = {
-//   urls: ["*://*.google.com/*"],
-// };
-// const session = Electron.remote.session;
-// session.defaultSession.webRequest.onBeforeSendHeaders(filter, (details, callback) => {
-//                 details.requestHeaders.Origin = null;
-//                 details.headers["Origin"] = null;
-//                 callback({ requestHeaders: details.requestHeaders });
-// });
-
-
-
-
 declare const Mousetrap: any;
 
-
+// Rename variables if we have multiple checkboxes
 const checked = JSON.parse(localStorage.getItem("checkbox1")!);
 if (checked === true) {
     (document.getElementById("defaultCheck1")! as HTMLInputElement).checked = true;
@@ -50,27 +37,13 @@ document.getElementById("request")!.onclick = async () => {
     document.getElementById("demo")!.innerHTML = x;
 };
 
-// request IP load () tidy up json object
-// const request = async () => {
-//     const response = await fetch("https://wtfismyip.com/json");
-//     // {}
-//     const json = await response.json();
-//     let x = JSON.stringify(json, null, "\t");
-//     x = x.replace('"YourFuckingIPAddress":', '"Your IP Adress":');
-//     x = x.replace('"YourFuckingHostname":', '"Your Hostname":');
-//     x = x.replace('"YourFuckingISP":', '"Your ISP":');
-//     x = x.replace('"YourFuckingTorExit":', '"Your TOR Exit":');
-//     x = x.replace('"YourFuckingCountryCode":', '"Your Country Code":');
-//     x = x.replace('"YourFuckingLocation":', '"Your Location":');
-//     document.getElementById("demo")!.innerHTML = x;
-//   };
-  // let the user open a new tab that loads IP checking service:
-const opentab = document.getElementById("opentab");
-opentab!.addEventListener("click", (e) => {
-    e.preventDefault();
-    // thisopentab();
-    // fix this later
-  });
+// let the user open a new tab that loads IP checking service:
+// const opentab = document.getElementById("opentab");
+// opentab!.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     // thisopentab();
+//     // fix this later
+//   });
 
 
 

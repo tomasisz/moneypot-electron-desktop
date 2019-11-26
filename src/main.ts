@@ -4,12 +4,6 @@ import Store from "electron-store";
 import path from "path";
 
 const store = new Store();
-// app.commandLine.appendSwitch("disable-features", "OutOfBlinkCors");
-
-
-
-
-
 
 if (require("electron-squirrel-startup")) { app.quit(); }
 
@@ -79,7 +73,6 @@ if (handleStartupEvent()) {
 
 
 // can we do this nicer?
-// const Browsericon = path.join(process.cwd(), "/static/icons/icon.png");
 const Browsericon = path.join(__dirname, "/static/icons/icon.png");
 declare var MAIN_WINDOW_WEBPACK_ENTRY: any;
 declare var MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: any;
@@ -91,9 +84,6 @@ declare var SECOND_WINDOW_PRELOAD_WEBPACK_ENTRY: any;
 ipcMain.on("request-mainprocess-action", (event: any, arg: any) => {
   createSecondWindow();
 });
-
-// console.log(__dirname + "\\static\\Tor\\Tor\\tor.exe");
-
 
 // Tor Windows
 const StartTorWindows = () => {
@@ -126,13 +116,11 @@ const createWindow = () => {
   session.defaultSession.webRequest.onHeadersReceived(filter, (details: any, callback) => {
     details.responseHeaders["access-control-allow-origin"] = "*";
     callback({ responseHeaders: Object.assign({
-        // tslint:disable-next-line: max-line-length
-        // "Content-Security-Policy": [ "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://wallet.moneypot.com " ],
-        // 'Access-Control-Allow-Origin': '*'
+
     }, details.responseHeaders)});
   });
 
-  
+
  // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 800,
@@ -193,6 +181,11 @@ const createSecondWindow = () => {
   secondWindow.loadURL(SECOND_WINDOW_WEBPACK_ENTRY);
   secondWindow.setIcon(Browsericon);
   secondWindow.autoHideMenuBar = true;
+  // This is unnecessary- but - ... 
+  secondWindow.webContents.session.setProxy(
+    {
+      proxyRules: "socks5://127.0.0.1:9050",
+    });
   // Open the DevTools.
   // secondWindow.webContents.openDevTools();
 
@@ -218,8 +211,10 @@ app.on("ready",
 
 );
 
-if (store.get("linuxstartup") !== "true") {
-store.set("linuxstartup", "false");
+if(process.platform === "linux") {
+  if (store.get("linuxstartup") !== "true") {
+    store.set("linuxstartup", "false");
+    }
 }
 
 if (process.platform === "linux" && store.get("linuxstartup") === "false" ) {
