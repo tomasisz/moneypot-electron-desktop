@@ -11,9 +11,6 @@ if (checked === true) {
   // no toaster
  } else if (checked === false) {
    thistoaster();
- } else {
-   thistoaster();
-   // backup
  }
 document.getElementById("savesettings")!.onclick = () => {
   const Checkbox1 = (document.getElementById("defaultCheck1")! as HTMLInputElement);
@@ -39,17 +36,6 @@ document.getElementById("request")!.onclick = async () => {
     // on multiple requests, user can check console to see that IP hasn't changed.
     // Note to self:  IP changes roughly every 10 minutes
 };
-
-// let the user open a new tab that loads IP checking service:
-// const opentab = document.getElementById("opentab");
-// opentab!.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     // thisopentab();
-//     // fix this later
-//   });
-
-
-
 
 const scriptTag = document.createElement("script");
 scriptTag.integrity = `sha256-${setHash}`;
