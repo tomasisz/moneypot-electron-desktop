@@ -12,8 +12,15 @@ module.exports = [
     // },
   {
     test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-    use: ["file-loader"]
+    use: {
+      loader: "file-loader",
+      options: {
+        outputPath: "fonts",
+        publicPath: "../fonts"
+
+      },
     },
+  },
   {
     test: /\.(m?js|node)$/,
     parser: { amd: false },
@@ -26,7 +33,7 @@ module.exports = [
   },
   // static
   {
-    test: /\.tsx?$/,
+    test: /\.(tsx?|ts)$/,
     exclude: /(node_modules|.webpack)/,
     loaders: [
       {
@@ -44,17 +51,9 @@ module.exports = [
          loader: 'url-loader',
          options: { 
             limit: 8000, // Convert images < 8kb to base64 strings
-            // outputPath: 'main_window',
-
-            //  publicPath: (__dirname + "/.webpack/renderer")
-
         } 
      }]
  }
-  
-      
- 
-  
   // Put your webpack loader rules in this array.  This is where you would put
   // your ts-loader configuration for instance:
   /**

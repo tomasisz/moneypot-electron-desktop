@@ -71,18 +71,18 @@
               "entryPoints": [
                 {
                   "html": "./src/renderer/login.html",
-                  "js": "./src/renderer/login.tsx",
+                  "js": "./src/renderer/login.ts",
                   "name": "main_window",
                   "preload": {
-                    "js": "./src/preload/login.tsx"
+                    "js": "./src/preload/login.ts"
                   }
                 },
                 {
                   "html": "./src/renderer/walletloader.html",
-                  "js": "./src/renderer/walletloader.tsx",
+                  "js": "./src/renderer/walletloader.ts",
                   "name": "second_window",
                   "preload": {
-                    "js": "./src/preload/walletloader.tsx"
+                    "js": "./src/preload/walletloader.ts"
                   }
                 }
               ]
@@ -114,6 +114,8 @@
     "file-loader": "^4.2.0",
     "fork-ts-checker-webpack-plugin": "^3.1.0",
     "node-loader": "^0.6.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
     "style-loader": "^0.23.1",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.2",

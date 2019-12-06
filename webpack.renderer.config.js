@@ -7,8 +7,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 
 rules.push({
-  test: /\.css$/,
-  use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
+  test: /\.(s*)css$/,
+  use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, {loader: 'sass-loader'}]
 });
 
 

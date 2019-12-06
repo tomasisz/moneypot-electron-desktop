@@ -1,27 +1,31 @@
 @import "bootstrap.min.css";
+@import "scss/fontawesome.scss";
+
 
 div.ex1 {
   width: 400px;
   margin: auto;
+
   /* border: 3px solid #73AD21; */
 }
 
-#hideurl { 
+#hideurl {
   visibility: hidden;
-  display: none; 
-}
-#hideurl.show {
-  visibility: visible;
-  display: block; 
+  display: none;
+
+  &.show {
+    visibility: visible;
+    display: block;
+  }
 }
 
 /* Just copy & pasted this. Might need later. */
-body { 
-  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  background-color:#3D91F9;
 
+body {
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background-color: #3D91F9;
 }
- 
+
 /* #cauldron {
   text-transform: lowercase;
   letter-spacing: 0.03rem;
@@ -35,64 +39,90 @@ body {
 } */
 
 /* Just copy & pasted this. Might need later. */
-.moneypot{
+
+.moneypot {
   text-transform: lowercase;
   letter-spacing: 0.03rem;
   font-weight: 600;
   top: 10px;
   position: absolute;
   align-self: flex-start;
-  margin: 0rem 1rem;
+  margin: 0rem 5.5rem;
   color: #fff;
 }
+ /* Overlay for cauldron fix-- (this is a bruh moment. I know. todo: remove.) */
+ #overlaycauldron {
+  position: fixed; /* Sit on top of the page content */
+  display: block; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0); /* Black background with opacity */
+  z-index: 4; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: cursor; /* Add a pointer on hover */
+  pointer-events: none;
 
-.btn-primary { 
+}
+
+ .fa-cauldron {
+   text-transform: lowercase;
+   letter-spacing: 0.03rem;
+   font-weight: 600;
+   top: 10px;
+   position: absolute;
+   align-self: flex-start;
+  margin: 0rem 2rem;
+   color: #fff;
+ }
+.btn-primary {
   margin-top: 50px;
 }
 
-.btn-success { 
-  margin: 0 auto; 
-  float: none; 
+.btn-success {
+  margin: 0 auto;
+  float: none;
   margin-bottom: 20px;
-
 }
 
 div.ex2 {
   margin: left;
+
   /* border: 3px solid #73AD21; */
-  
 }
 
 #card3 {
-  margin: 0 auto; 
+  margin: 0 auto;
+
   /* float: none;  */
   /* margin-bottom: 10px; */
-   margin-top: 40px;  
+  margin-top: 40px;
+
   /* margin-top: 40px; */
   /* margin-top: 50px; */
   /* -ms-transform: translateY(-50%);
   transform: translateY(-50%);  */
-  
-
-} 
-
-
-#card2 { 
-  margin: 0 auto; 
-  float: none; 
-  margin-bottom: 10px; 
-
 }
- #card1 {
-  margin: 0 auto; 
-  float: none; 
-  margin-bottom: 10px; 
+
+#card2 {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+}
+
+#card1 {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
   margin-top: 100px;
+
   /* margin-top: 40px; */
   /* margin-top: 50px; */
   /* -ms-transform: translateY(-50%);
   transform: translateY(-50%);  */
-} 
+}
 
 #toaster {
   visibility: hidden;
@@ -128,10 +158,10 @@ div.ex2 {
 
 #toaster.show {
   visibility: visible;
+
   /* -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s; */
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
-
 
 /* 
 #toaster.hide {
@@ -140,48 +170,51 @@ div.ex2 {
 
 @-webkit-keyframes fadein {
   from {
-      bottom: 0;
-      opacity: 0;
+    bottom: 0;
+    opacity: 0;
   }
+
   to {
-      bottom: 30px;
-      opacity: 1;
+    bottom: 30px;
+    opacity: 1;
   }
 }
 
 @keyframes fadein {
   from {
-      bottom: 0;
-      opacity: 0;
+    bottom: 0;
+    opacity: 0;
   }
+
   to {
-      bottom: 30px;
-      opacity: 1;
+    bottom: 30px;
+    opacity: 1;
   }
 }
 
 @-webkit-keyframes fadeout {
   from {
-      bottom: 30px;
-      opacity: 0;
+    bottom: 30px;
+    opacity: 0;
   }
+
   to {
-      bottom: 0;
-      opacity: 0;
+    bottom: 0;
+    opacity: 0;
   }
 }
 
 @keyframes fadeout {
   from {
-      bottom: 30px;
-      opacity: 1;
+    bottom: 30px;
+    opacity: 1;
   }
+
   to {
-      bottom: 0;
-      opacity: 0;
+    bottom: 0;
+    opacity: 0;
   }
 }
-
 
 #toaster4 {
   visibility: hidden;
@@ -213,19 +246,21 @@ div.ex2 {
   right: 30px;
   top: 50px;
   font-size: 17px;
-}
 
-#toaster3.show {
-  visibility: visible;
-  -webkit-animation: fadein2 1s, fadeout2 1s 5s;
-  animation: fadein2 1s, fadeout2 1s 5s;
+  &.show {
+    visibility: visible;
+    -webkit-animation: fadein2 1s, fadeout2 1s 5s;
+    animation: fadein2 1s, fadeout2 1s 5s;
+  }
 }
 
 #toaster2.show {
   visibility: visible;
+
   /* -webkit-animation: fadein 0.5s, fadeout 0.5s 2.6s; */
   animation: fadein 0.5s, fadeout 0.5s 2.6s;
 }
+
 #toaster4.show {
   visibility: visible;
   -webkit-animation: fadein2 1s, fadeout2 1s 5s;
@@ -234,78 +269,101 @@ div.ex2 {
 
 @-webkit-keyframes fadein2 {
   from {
-      top: 0;
-      opacity: 0;
+    top: 0;
+    opacity: 0;
   }
+
   to {
-      top: 50px;
-      opacity: 1;
+    top: 50px;
+    opacity: 1;
   }
 }
 
 @keyframes fadein2 {
   from {
-      top: 0;
-      opacity: 0;
+    top: 0;
+    opacity: 0;
   }
+
   to {
-      top: 50px;
-      opacity: 1;
+    top: 50px;
+    opacity: 1;
   }
 }
 
 @-webkit-keyframes fadeout2 {
   from {
-      top: 50px;
-      opacity: 1;
+    top: 50px;
+    opacity: 1;
   }
+
   to {
-      top: 0;
-      opacity: 0;
+    top: 0;
+    opacity: 0;
   }
 }
 
 @keyframes fadeout2 {
   from {
-      top: 50px;
-      opacity: 1;
+    top: 50px;
+    opacity: 1;
   }
+
   to {
-      top: 0;
-      opacity: 0;
+    top: 0;
+    opacity: 0;
   }
 }
 
-
 /* information overlay. This is starting to get inefficient */
+
 #overlayinfo {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
+  position: fixed;
+
+  /* Sit on top of the page content */
+  display: none;
+
+  /* Hidden by default */
+  width: 100%;
+
+  /* Full width (cover the whole page) */
+  height: 100%;
+
+  /* Full height (cover the whole page) */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  z-index: 5; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: default; /* Add a pointer on hover */
-}
-#overlayinfo.show {
-  visibility: visible;
-  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  /* Black background with opacity */
+  z-index: 5;
+
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: default;
+
+  /* Add a pointer on hover */
+
+  &.show {
+    visibility: visible;
+    display: block;
+  }
+
+  &.hide {
+    visibility: hidden;
+  }
 }
 
-#overlayinfo.hide {
-  visibility: hidden;
-}
 #innerbox {
- width:500px; /* or whatever width you want. */
- margin: auto;
- max-width:500px;
- min-width: 200px;
- /* or whatever width you want. */
- /* display: inline-block; */
+  width: 500px;
+
+  /* or whatever width you want. */
+  margin: auto;
+  max-width: 500px;
+  min-width: 200px;
+
+  /* or whatever width you want. */
+  /* display: inline-block; */
 }
 
 #loadOverlay {

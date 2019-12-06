@@ -1,15 +1,16 @@
- import "../styles/login.css";
+
+// Bootstra[ && ... ]
+import "../styles/login.scss";
+
+// Specific FA icons[ && ... ]
+import "../styles/scss/duotone.scss";
+import "../styles/scss/solid.scss";
+
 declare const ipcRenderer: any;
 declare const window: any;
-// import x from "../../static/icons/anothericon.png";
-
 
 // This works- types are ridiculously bad though
 window.sourceMapSupport.install();
-
-
-
-// // WEBPACK PATHS ARE BUGGED IN PRODUCTION
 // // replace this with FA icons
 // const elem = document.createElement("img");
 
@@ -60,7 +61,6 @@ request();
 
 
 
-
 document.getElementById("displayurl")!.onclick = () => {
     document.getElementById("url")!.innerHTML = thisURL!;
     document.getElementById("hash")!.innerHTML = MainHash!;
@@ -85,17 +85,39 @@ document.getElementById("submit")!.onclick =  () => {
         // get values from each form field
         const url = (document.getElementById("moneypoturl") as HTMLInputElement).value;
         localStorage.setItem("MoneypotURL", (url));
+
+
     };
 
 
 const thisURL = localStorage.getItem("MoneypotURL");
 // document.getElementById("insert")!.innerHTML = thisURL!;
 
+// only if string contains #
+
+// if(thisURL!.indexOf("#") < -1)  {
+//      alert("Your URL is invalid. Please check it")
+// }
+
 const arr = thisURL!.split("#");
+
+
 const Mainscript = arr.shift(); // or arr[arr.length-1];
 localStorage.setItem("MainscriptURL", (Mainscript)!);
 const MainHash = arr.pop(); // or arr[0];
 localStorage.setItem("MainHash", (MainHash)!);
+
+
+
+
+
+// const arr = thisURL!.split("#");
+// const Mainscript = arr.shift(); // or arr[arr.length-1];
+// localStorage.setItem("MainscriptURL", (Mainscript)!);
+// const MainHash = arr.pop(); // or arr[0];
+// localStorage.setItem("MainHash", (MainHash)!);
+
+
 // document.getElementById("ThisMainHash")!.innerHTML = MainHash!;
 
 
@@ -117,7 +139,17 @@ closebtn!.addEventListener("click", (e) => {
 
 
 //   const byteLength = parseInt((length).replace(/=/g, "")!.length * 0.75,);
-const byteLength = MainHash!.replace(/=/g, "").length * 0.75;
+// this seems to work and remove some trivial error messages. save here.
+function check() {
+    if(MainHash === undefined) { 
+        return "will-be-considered-invalid"
+    }
+    if(MainHash !== undefined) {
+        return MainHash
+    }
+}
+
+const byteLength = check()!.replace(/=/g, "").length * 0.75;
 const l = Math.floor(byteLength);
 
   // We use the makeshift bytelength function ?

@@ -1,4 +1,4 @@
-import "../styles/walletloader.css";
+import "../styles/walletloader.scss";
 const setURL = localStorage.getItem("MainscriptURL");
 const setHash = localStorage.getItem("MainHash");
 
@@ -35,6 +35,9 @@ document.getElementById("request")!.onclick = async () => {
     x = x.replace('"YourFuckingCountryCode":', '"Your Country Code":');
     x = x.replace('"YourFuckingLocation":', '"Your Location":');
     document.getElementById("demo")!.innerHTML = x;
+    console.log(x)
+    // on multiple requests, user can check console to see that IP hasn't changed.
+    // Note to self:  IP changes roughly every 10 minutes
 };
 
 // let the user open a new tab that loads IP checking service:
